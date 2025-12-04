@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% if data %}{{ data.artist_name }} - Top 10{% else %}Music Charts{% endif %}</title>
+    <!-- CSS -->
+     <link rel="stylesheet" href="{{ url_for('static', filename='styles/main.css') }}">
+     <!-- JS -->
+      <script src="{{ url_for('static', filename='scripts/main.js') }}"></script>
+
+</head>
+<body>
+    <header>
+        <h1>Music Charts</h1>
+    </header>
+
+
+    <section class="artist-input">
+        <form action="/top-ten" method="get">
+            <label for="artist">Enter artist name:</label>
+            <input type="text" name="artist" id="artist" required>
+            <button type="submit">Get Top 10</button>
+        </form>
+    </section>
+
+    {% if data %}
+    <section class="artist-info">
+        <h2>{{ data.artist_name }}</h2>
+        {% if data.artist_photo %}
+        <img src="{{ data.artist_photo }}" alt="{{ data.artist_name }}">
+        {% endif %}
+    </section>
+
+    <section class="top-tracks">
+        <h3>Top 10 Tracks:</h3>
+        <ul class="track-list">
+            {% for track in data.top_tracks %}
+            <li>
+                {{ loop.index }}. {{ track.name }} - 
+                <a href="{{ track.spotify_url }}" target="_blank">Listen on Spotify</a>
+                {% if track.preview_url %}
+                    | <a href="{{ track.preview_url }}" target="_blank">Preview</a>
+                {% endif %}
+            </li>
+            {% endfor %}
+        </ul>
+    </section>
+    {% endif %}
+
+    <footer>
+        <p>&copy; 2025 Music Charts</p>
+        <p>My Music Charts App</p>
+    </footer>
+</body>
+</html>

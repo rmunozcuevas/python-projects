@@ -1,0 +1,54 @@
+
+body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    background: lightblue;
+}
+.artist-info {
+    margin-bottom: 20px;
+}
+
+.artist-info img {
+    max-width: 200px;
+    border-radius: 10px;
+}
+
+.track-list {
+    list-style: none;
+    border: 4mm ridge rgb(211 220 50 / 0.6);
+    margin: 0 auto;
+    padding: 0;
+    width: 400px;
+}
+
+.track-list li {
+    margin-bottom: 10px;
+}
+
+.track-list a {
+    text-decoration: none;
+    color: #1DB954; 
+}
+
+
+
+
+
+
+
+header h1 {
+    text-align: center;
+}
+
+.artist-input,
+.artist-info,
+.top-tracks {
+    text-align: center;
+}
+
+.artist-info img {
+    border-radius: 10px;
+    max-width: 200px;
+}
+
+

@@ -1,10 +1,11 @@
-
 import billboard
+from billboard import chart
 
-chart = billboard.ChartData('hot-100')
-print(chart.title)         # e.g. "The Hot 100"
-print("TOP SONG RIGHT NOW",chart[0].title, "-", chart[0].artist)
+# chart = billboard.ChartData('hot-100', date='2016-03-26')
+# print(chart)
 
+top_hundred = billboard.ChartData('hot-100')
+print(top_hundred)
 
-
-
+song = chart[0]
+song
