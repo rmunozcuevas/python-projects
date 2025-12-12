@@ -49,7 +49,34 @@ def get_movement_history():
 
 ## --- DB portion of code ^ --- 
 
+def get_num_input(num):
+    if type(num) == int:
+        return True
+    else:
+        if num.is_integer():
+            return True
+        else:
+            return False
 
+
+
+
+## --- Helper functions ^ ----
+
+def add_gym_log():
+    print("\n --- GYM DATA INPUT ---")
+
+    while True:
+        date_str = input("Enter the date (YYYY-MM-DD): ")
+        if date_str.upper() == "QUIT":
+            return
+        try:
+            date.isoformat(date_str)
+            break
+        except ValueError:
+            print("Date is invalid please input in format (YYYY-MM-DD)")
+
+    reps = input()
 
 
 
