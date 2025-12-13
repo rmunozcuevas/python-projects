@@ -11,7 +11,7 @@ def setup_database():
     print("Connecting to Database...")
 
     # Drops the table to ensure IDs reset and schema is always fresh
-    c.execute("DROP TABLE IF EXISTS event_log")
+    # c.execute("DROP TABLE IF EXISTS event_log")
 
     c.execute("""CREATE TABLE IF NOT EXISTS event_log (
               event_id INTEGER PRIMARY KEY,  
