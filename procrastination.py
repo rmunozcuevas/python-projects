@@ -178,3 +178,7 @@ def main():
 if __name__ == "__main__":
     setup_database()
     main()
+
+
+# Make sure to set up a documentation page that goes over what every line of code does
+# This is to ensure full understanding
